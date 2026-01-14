@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= typeof title !== 'undefined' ? title : 'Alma Brazil' %> | Women-led Brazil Travel</title>
+  <meta name="description" content="Bespoke women-led journeys into the heart of Brazil. Discover the deeper rhythms and textures of this vast country with local guides who become friends.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <nav class="nav" id="nav">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">Alma Brazil</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/" class="<%= page === 'home' ? 'active' : '' %>">Home</a></li>
+        <li><a href="/about" class="<%= page === 'about' ? 'active' : '' %>">About</a></li>
+        <li><a href="/experience" class="<%= page === 'experience' ? 'active' : '' %>">The Experience</a></li>
+        <li><a href="/contact" class="<%= page === 'contact' ? 'active' : '' %>">Contact</a></li>
+      </ul>
+      <div class="nav-toggle" id="navToggle" onclick="toggleNav()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
