@@ -18,7 +18,7 @@
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
   /* Spacing */
-  --section-padding: 120px;
+  --section-padding: 80px;
   --container-width: 1200px;
 }
 
@@ -218,21 +218,21 @@ a:hover {
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--color-forest);
-  margin-bottom: 2rem;
+  margin-bottom: 1.25rem;
 }
 
 .hero h1 {
-  margin-bottom: 2rem;
+  margin-bottom: 1.25rem;
   color: var(--color-charcoal);
 }
 
 .hero-subtitle {
   font-family: var(--font-serif);
-  font-size: 1.4rem;
+  font-size: 1.25rem;
   font-style: italic;
   color: var(--color-warm-gray);
-  margin-bottom: 3rem;
-  max-width: 600px;
+  margin-bottom: 2rem;
+  max-width: 550px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -293,7 +293,7 @@ a:hover {
 .section-header {
   text-align: center;
   max-width: 700px;
-  margin: 0 auto 4rem;
+  margin: 0 auto 2.5rem;
 }
 
 .section-header p {
@@ -308,7 +308,7 @@ a:hover {
 .intro {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 6rem;
+  gap: 4rem;
   align-items: center;
 }
 
@@ -346,25 +346,25 @@ a:hover {
 .features {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
-  margin-top: 4rem;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 .feature {
   text-align: center;
-  padding: 2rem;
+  padding: 1.5rem 1rem;
 }
 
 .feature-icon {
-  width: 60px;
-  height: 60px;
-  margin: 0 auto 1.5rem;
+  width: 44px;
+  height: 44px;
+  margin: 0 auto 1rem;
   border: 1px solid var(--color-terracotta);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .feature h3 {
@@ -382,8 +382,8 @@ a:hover {
    ======================================== */
 
 .about-hero {
-  padding-top: 150px;
-  padding-bottom: var(--section-padding);
+  padding-top: 130px;
+  padding-bottom: 60px;
   text-align: center;
 }
 
@@ -403,7 +403,7 @@ a:hover {
 .about-story {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 6rem;
+  gap: 4rem;
   align-items: start;
 }
 
@@ -439,8 +439,8 @@ a:hover {
 }
 
 .credentials {
-  margin-top: 4rem;
-  padding-top: 3rem;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
   border-top: 1px solid var(--color-sand);
 }
 
@@ -468,8 +468,8 @@ a:hover {
    ======================================== */
 
 .experience-hero {
-  padding-top: 150px;
-  padding-bottom: var(--section-padding);
+  padding-top: 130px;
+  padding-bottom: 60px;
   text-align: center;
 }
 
@@ -518,8 +518,8 @@ a:hover {
 }
 
 .philosophy-item {
-  margin-bottom: 3rem;
-  padding-bottom: 3rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
   border-bottom: 1px solid var(--color-sand);
 }
 
@@ -539,7 +539,7 @@ a:hover {
 .included-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  gap: 3rem;
 }
 
 .included-list h3 {
@@ -586,7 +586,7 @@ a:hover {
 .contact-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 6rem;
+  gap: 4rem;
   align-items: start;
 }
 
@@ -682,14 +682,14 @@ a:hover {
 .footer {
   background-color: var(--color-charcoal);
   color: var(--color-sand);
-  padding: 4rem 0 2rem;
+  padding: 3rem 0 1.5rem;
 }
 
 .footer-content {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
-  gap: 4rem;
-  margin-bottom: 3rem;
+  gap: 3rem;
+  margin-bottom: 2rem;
 }
 
 .footer-brand h3 {
@@ -761,7 +761,7 @@ a:hover {
 
 @media (max-width: 1024px) {
   :root {
-    --section-padding: 80px;
+    --section-padding: 60px;
   }
 
   .intro,
@@ -792,6 +792,17 @@ a:hover {
 }
 
 @media (max-width: 768px) {
+  :root {
+    --section-padding: 48px;
+  }
+
+  .about-hero,
+  .experience-hero,
+  .journey-hero {
+    padding-top: 100px;
+    padding-bottom: 40px;
+  }
+
   .nav-links {
     display: none;
     position: absolute;
@@ -894,4 +905,290 @@ a:hover {
   color: var(--color-warm-gray);
   margin-top: 1.5rem;
   margin-bottom: 0;
+}
+
+/* ========================================
+   AUDIENCE LIST
+   ======================================== */
+
+.audience-list {
+  list-style: none;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.audience-list li {
+  padding: 0.6rem 0;
+  color: var(--color-warm-gray);
+  font-size: 1.05rem;
+}
+
+.audience-list li::before {
+  content: '\2014';
+  margin-right: 0.75rem;
+  color: var(--color-terracotta);
+}
+
+/* ========================================
+   JOURNEY CARDS (Homepage & Overview)
+   ======================================== */
+
+.journey-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.journey-card {
+  display: block;
+  background: var(--color-cream);
+  padding: 2rem 1.75rem;
+  border: 1px solid var(--color-sand);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: var(--color-charcoal);
+}
+
+.journey-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  color: var(--color-charcoal);
+}
+
+.journey-card-label {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-forest);
+  margin-bottom: 1rem;
+}
+
+.journey-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.journey-card p {
+  color: var(--color-warm-gray);
+  font-size: 0.95rem;
+}
+
+.journey-card-link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: var(--color-forest);
+  text-transform: uppercase;
+}
+
+/* Journey Cards - Full (Overview Page) */
+
+.journey-cards-full {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.journey-card-full {
+  display: block;
+  background: var(--color-cream);
+  border: 1px solid var(--color-sand);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: var(--color-charcoal);
+}
+
+.journey-card-full:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  color: var(--color-charcoal);
+}
+
+.journey-card-full-content {
+  padding: 2.5rem;
+}
+
+.journey-card-full h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: 0.5rem;
+}
+
+.journey-card-tagline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--color-warm-gray);
+  margin-bottom: 1.5rem;
+}
+
+.journey-card-highlights {
+  list-style: none;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.journey-card-highlights li {
+  padding: 0.4rem 0;
+  color: var(--color-warm-gray);
+  font-size: 0.95rem;
+}
+
+.journey-card-highlights li::before {
+  content: '\2014';
+  margin-right: 0.75rem;
+  color: var(--color-terracotta);
+}
+
+/* ========================================
+   INDIVIDUAL JOURNEY PAGES
+   ======================================== */
+
+.journey-hero {
+  padding-top: 130px;
+  padding-bottom: 60px;
+  text-align: center;
+}
+
+.journey-hero h1 {
+  margin-bottom: 1rem;
+}
+
+.journey-hero .subtitle {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-style: italic;
+  color: var(--color-warm-gray);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.journey-hero-label {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-forest);
+  margin-bottom: 1.5rem;
+}
+
+.journey-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.journey-content h2 {
+  margin-bottom: 1.5rem;
+}
+
+.journey-content p {
+  color: var(--color-warm-gray);
+}
+
+.journey-opening {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--color-charcoal);
+  margin-bottom: 1.5rem;
+}
+
+.journey-list {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.journey-list li {
+  padding: 0.6rem 0;
+  color: var(--color-warm-gray);
+  font-size: 1rem;
+  border-bottom: 1px solid var(--color-sand);
+}
+
+.journey-list li:last-child {
+  border-bottom: none;
+}
+
+.journey-list li::before {
+  content: '\2014';
+  margin-right: 0.75rem;
+  color: var(--color-terracotta);
+}
+
+.journey-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+
+.journey-two-col h2 {
+  margin-bottom: 1.5rem;
+}
+
+/* ========================================
+   HOW IT WORKS (About Page)
+   ======================================== */
+
+.how-it-works {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.how-step {
+  text-align: center;
+  padding: 1.5rem 1rem;
+}
+
+.how-step-number {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 1rem;
+  border: 1px solid var(--color-forest);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: var(--color-forest);
+}
+
+.how-step h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.how-step p {
+  color: var(--color-warm-gray);
+  font-size: 0.95rem;
+}
+
+/* ========================================
+   RESPONSIVE - Journey Pages
+   ======================================== */
+
+@media (max-width: 1024px) {
+  .journey-cards {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .journey-two-col {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .how-it-works {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .journey-card-full-content {
+    padding: 2rem;
+  }
 }

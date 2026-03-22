@@ -24,8 +24,27 @@ app.get('/about', (req, res) => {
   res.render('about', { page: 'about' });
 });
 
+// Journeys overview
+app.get('/journeys', (req, res) => {
+  res.render('journeys', { page: 'journeys' });
+});
+
+// Individual journeys
+app.get('/journeys/rio', (req, res) => {
+  res.render('journeys/rio', { page: 'journeys' });
+});
+
+app.get('/journeys/bahia', (req, res) => {
+  res.render('journeys/bahia', { page: 'journeys' });
+});
+
+app.get('/journeys/nature', (req, res) => {
+  res.render('journeys/nature', { page: 'journeys' });
+});
+
+// Redirect old experience URL
 app.get('/experience', (req, res) => {
-  res.render('experience', { page: 'experience' });
+  res.redirect(301, '/journeys');
 });
 
 app.get('/contact', (req, res) => {
