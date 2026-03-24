@@ -1,0 +1,74 @@
+<%- include('partials/header', { title: 'Settings' }) %>
+
+<main>
+  <section class="section section-white" style="padding-top: 140px;">
+    <div class="container" style="max-width: 700px;">
+      <h1 style="margin-bottom: 0.5rem;">Site Settings</h1>
+      <p style="color: var(--color-warm-gray); margin-bottom: 2.5rem;">Configure your email settings so contact form submissions are sent to you.</p>
+
+      <% if (message) { %>
+        <div style="padding: 1rem 1.5rem; margin-bottom: 2rem; border-radius: 4px; background: <%= message.type === 'success' ? '#e8f5e9' : '#fbe9e7' %>; color: <%= message.type === 'success' ? '#2e7d32' : '#c62828' %>;">
+          <%= message.text %>
+        </div>
+      <% } %>
+
+      <!-- Setup Instructions -->
+      <div style="background: var(--color-sand); padding: 2rem; margin-bottom: 2.5rem; border-radius: 4px;">
+        <h3 style="margin-bottom: 1rem; font-size: 1.1rem;">How to get your free Resend API key</h3>
+        <ol style="padding-left: 1.25rem; line-height: 2; color: var(--color-warm-gray);">
+          <li>Go to <a href="https://resend.com/signup" target="_blank" style="color: var(--color-forest);">resend.com/signup</a> and create a free account</li>
+          <li>Once logged in, go to <strong>API Keys</strong> in the left sidebar</li>
+          <li>Click <strong>Create API Key</strong>, give it a name (e.g. "Alma Brazil"), and copy the key</li>
+          <li>Paste it below and save</li>
+        </ol>
+        <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--color-warm-gray);">
+          <strong>Free tier:</strong> 100 emails/day, 3,000/month. More than enough for contact form inquiries.
+        </p>
+        <p style="margin-top: 0.75rem; font-size: 0.9rem; color: var(--color-warm-gray);">
+          <strong>Optional:</strong> To send from your own domain (e.g. hello@almabrazil.com) instead of onboarding@resend.dev, add your domain in Resend's <strong>Domains</strong> section and update the "From Email" below.
+        </p>
+      </div>
+
+      <!-- Settings Form -->
+      <form action="/admin/settings" method="POST">
+        <div class="form-group">
+          <label for="resendApiKey">Resend API Key</label>
+          <input type="password" id="resendApiKey" name="resendApiKey" value="<%= settings.resendApiKey || '' %>" placeholder="re_xxxxxxxxxxxxxxxxxxxxxxxxx" style="font-family: monospace;">
+          <small style="color: var(--color-warm-gray); display: block; margin-top: 0.4rem;">Starts with <code>re_</code>. Keep this private.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="fromEmail">From Email</label>
+          <input type="email" id="fromEmail" name="fromEmail" value="<%= settings.fromEmail || 'onboarding@resend.dev' %>" placeholder="onboarding@resend.dev">
+          <small style="color: var(--color-warm-gray); display: block; margin-top: 0.4rem;">Use <code>onboarding@resend.dev</code> to start, or your own verified domain email.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="toEmail">Send Inquiries To</label>
+          <input type="email" id="toEmail" name="toEmail" value="<%= settings.toEmail || 'battersbyaraujo@gmail.com' %>" placeholder="battersbyaraujo@gmail.com">
+        </div>
+
+        <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+          <button type="submit" class="btn btn-primary">Save Settings</button>
+          <button type="submit" name="action" value="test" class="btn btn-outline">Save & Send Test Email</button>
+        </div>
+      </form>
+
+      <!-- Status -->
+      <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--color-sand);">
+        <h3 style="font-size: 1rem; margin-bottom: 0.75rem;">Current Status</h3>
+        <p style="font-size: 0.95rem; color: var(--color-warm-gray);">
+          <% if (settings.resendApiKey) { %>
+            Email delivery: <strong style="color: #2e7d32;">Configured</strong><br>
+            Sending to: <strong><%= settings.toEmail || 'battersbyaraujo@gmail.com' %></strong>
+          <% } else { %>
+            Email delivery: <strong style="color: #c62828;">Not configured</strong><br>
+            Form submissions are being logged to the server console only.
+          <% } %>
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<%- include('partials/footer') %>
