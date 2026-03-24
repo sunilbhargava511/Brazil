@@ -930,6 +930,48 @@ a:hover {
 }
 
 /* ========================================
+   TESTIMONIALS
+   ======================================== */
+
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.testimonial {
+  text-align: center;
+  padding: 2rem 1.5rem;
+}
+
+.testimonial-quote {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--color-charcoal);
+  margin-bottom: 1rem;
+}
+
+.testimonial-attribution {
+  font-size: 0.9rem;
+  color: var(--color-warm-gray);
+  letter-spacing: 0.03em;
+}
+
+@media (max-width: 768px) {
+  .testimonials {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .testimonial {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* ========================================
    JOURNEY CARDS (Homepage & Overview)
    ======================================== */
 
